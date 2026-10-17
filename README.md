@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+# StudyBuddy AI 📚
+
+An AI-powered study companion that helps students learn from their own study material.
+
+## Features
+
+- **Document Upload:** Upload PDF and DOCX files and extract study notes.
+- **AI Tutor:** Ask questions about your notes and receive AI-generated explanations.
+- **Quick Revision Notes:** Generate concise, exam-focused revision summaries.
+- **AI Quiz Generator:** Create five multiple-choice questions, check your answers, and review explanations.
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Ollama
+- Gemma 3 4B
+- unpdf
+- Mammoth.js
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js and npm
+- Ollama installed locally
+- The `gemma3:4b` model downloaded in Ollama
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/rayirthcodes/studybuddy-ai.git
+cd studybuddy-ai
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Download the model if you have not already:
+
+```bash
+ollama pull gemma3:4b
+```
+
+Start Ollama, then run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How It Works
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Users provide study notes by pasting text or uploading a document. The application extracts document text and sends the material to a locally running Gemma model through Ollama for tutoring, revision summaries, and quiz generation.
 
-## Learn More
+## AI Contribution
 
-To learn more about Next.js, take a look at the following resources:
+Gemma 3 4B powers the AI tutoring, revision-summary generation, and quiz-generation workflows. The application connects to the model through Ollama.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See the LICENSE file.
